@@ -13,7 +13,33 @@
 		FA00CC591D8D0BC800DE95C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA00CC571D8D0BC800DE95C9 /* Main.storyboard */; };
 		FA00CC5B1D8D0BC800DE95C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA00CC5A1D8D0BC800DE95C9 /* Assets.xcassets */; };
 		FA00CC5E1D8D0BC800DE95C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA00CC5C1D8D0BC800DE95C9 /* LaunchScreen.storyboard */; };
+		FA00CC661D8D0DBB00DE95C9 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00CC651D8D0DBB00DE95C9 /* Operator.swift */; };
+		FA00CC681D8D10CB00DE95C9 /* Performer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00CC671D8D10CB00DE95C9 /* Performer.swift */; };
+		FA00CC6C1D8D125600DE95C9 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA00CC691D8D125600DE95C9 /* RxBlocking.framework */; };
+		FA00CC6D1D8D125600DE95C9 /* RxBlocking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA00CC691D8D125600DE95C9 /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA00CC6E1D8D125600DE95C9 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA00CC6A1D8D125600DE95C9 /* RxCocoa.framework */; };
+		FA00CC6F1D8D125600DE95C9 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA00CC6A1D8D125600DE95C9 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA00CC701D8D125600DE95C9 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA00CC6B1D8D125600DE95C9 /* RxSwift.framework */; };
+		FA00CC711D8D125600DE95C9 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA00CC6B1D8D125600DE95C9 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA00CC741D8D17C200DE95C9 /* ExampleOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00CC731D8D17C200DE95C9 /* ExampleOperators.swift */; };
+		FA00CC761D8D251100DE95C9 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00CC751D8D251000DE95C9 /* TimelineView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FA00CC721D8D125600DE95C9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FA00CC6F1D8D125600DE95C9 /* RxCocoa.framework in Embed Frameworks */,
+				FA00CC6D1D8D125600DE95C9 /* RxBlocking.framework in Embed Frameworks */,
+				FA00CC711D8D125600DE95C9 /* RxSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		FA00CC4E1D8D0BC800DE95C9 /* RxPlaygrounds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxPlaygrounds.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +50,13 @@
 		FA00CC5A1D8D0BC800DE95C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA00CC5D1D8D0BC800DE95C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA00CC5F1D8D0BC800DE95C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA00CC651D8D0DBB00DE95C9 /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
+		FA00CC671D8D10CB00DE95C9 /* Performer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Performer.swift; path = ../Performer.swift; sourceTree = "<group>"; };
+		FA00CC691D8D125600DE95C9 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		FA00CC6A1D8D125600DE95C9 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		FA00CC6B1D8D125600DE95C9 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		FA00CC731D8D17C200DE95C9 /* ExampleOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleOperators.swift; sourceTree = "<group>"; };
+		FA00CC751D8D251000DE95C9 /* TimelineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +64,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA00CC6E1D8D125600DE95C9 /* RxCocoa.framework in Frameworks */,
+				FA00CC6C1D8D125600DE95C9 /* RxBlocking.framework in Frameworks */,
+				FA00CC701D8D125600DE95C9 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +76,9 @@
 		FA00CC451D8D0BC800DE95C9 = {
 			isa = PBXGroup;
 			children = (
+				FA00CC691D8D125600DE95C9 /* RxBlocking.framework */,
+				FA00CC6A1D8D125600DE95C9 /* RxCocoa.framework */,
+				FA00CC6B1D8D125600DE95C9 /* RxSwift.framework */,
 				FA00CC501D8D0BC800DE95C9 /* RxPlaygrounds */,
 				FA00CC4F1D8D0BC800DE95C9 /* Products */,
 			);
@@ -59,6 +98,10 @@
 				FA00CC511D8D0BC800DE95C9 /* AppDelegate.swift */,
 				FA00CC531D8D0BC800DE95C9 /* MasterViewController.swift */,
 				FA00CC551D8D0BC800DE95C9 /* DetailViewController.swift */,
+				FA00CC651D8D0DBB00DE95C9 /* Operator.swift */,
+				FA00CC671D8D10CB00DE95C9 /* Performer.swift */,
+				FA00CC731D8D17C200DE95C9 /* ExampleOperators.swift */,
+				FA00CC751D8D251000DE95C9 /* TimelineView.swift */,
 				FA00CC571D8D0BC800DE95C9 /* Main.storyboard */,
 				FA00CC5A1D8D0BC800DE95C9 /* Assets.xcassets */,
 				FA00CC5C1D8D0BC800DE95C9 /* LaunchScreen.storyboard */,
@@ -77,6 +120,7 @@
 				FA00CC4A1D8D0BC800DE95C9 /* Sources */,
 				FA00CC4B1D8D0BC800DE95C9 /* Frameworks */,
 				FA00CC4C1D8D0BC800DE95C9 /* Resources */,
+				FA00CC721D8D125600DE95C9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,7 +184,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA00CC741D8D17C200DE95C9 /* ExampleOperators.swift in Sources */,
+				FA00CC761D8D251100DE95C9 /* TimelineView.swift in Sources */,
 				FA00CC561D8D0BC800DE95C9 /* DetailViewController.swift in Sources */,
+				FA00CC681D8D10CB00DE95C9 /* Performer.swift in Sources */,
+				FA00CC661D8D0DBB00DE95C9 /* Operator.swift in Sources */,
 				FA00CC541D8D0BC800DE95C9 /* MasterViewController.swift in Sources */,
 				FA00CC521D8D0BC800DE95C9 /* AppDelegate.swift in Sources */,
 			);
@@ -266,6 +314,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S8ZP685HLU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RxPlaygrounds/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyandev.RxPlaygrounds;
@@ -279,6 +331,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S8ZP685HLU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RxPlaygrounds/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyandev.RxPlaygrounds;
