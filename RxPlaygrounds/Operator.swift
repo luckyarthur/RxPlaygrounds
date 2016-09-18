@@ -12,7 +12,6 @@ import RxSwift
 enum SampleValue {
     
     case number(Int)
-    
     case string(String)
     
     var displayString: String {

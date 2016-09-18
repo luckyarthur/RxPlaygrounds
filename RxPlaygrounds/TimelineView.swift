@@ -119,10 +119,16 @@ class TimelineView: UIView {
 
     var lineLayer: CAShapeLayer!
     var arrowLayer: CAShapeLayer!
+    var cursorLayer: CAShapeLayer!
     
     var marbles = [MarbleView]()
     
     var editable = true
+    var cursorPosition: Int8 = 0 {
+        didSet {
+            self.setNeedsLayout()
+        }
+    }
     
     weak var delegate: TimelineViewDelegate?
     
@@ -152,8 +158,18 @@ class TimelineView: UIView {
         self.arrowLayer.strokeColor = UIColor.black.cgColor
         self.arrowLayer.path = arrowPath
         
+        let cursorPath = CGMutablePath()
+        cursorPath.move(to: CGPoint(x: 0, y: 0))
+        cursorPath.addLine(to: CGPoint(x: 0, y: 20))
+        
+        self.cursorLayer = CAShapeLayer()
+        self.cursorLayer.lineWidth = 2
+        self.cursorLayer.strokeColor = UIColor.black.cgColor
+        self.cursorLayer.path = cursorPath
+        
         self.layer.addSublayer(self.lineLayer)
         self.layer.addSublayer(self.arrowLayer)
+        self.layer.addSublayer(self.cursorLayer)
     }
     
     override func layoutSubviews() {
@@ -167,6 +183,11 @@ class TimelineView: UIView {
         self.lineLayer.frame = CGRect(x: 0, y: (self.bounds.height - 2) / 2, width: self.bounds.width, height: 2)
         
         self.arrowLayer.frame = CGRect(x: self.bounds.width - 20, y: (self.bounds.height - 22) / 2, width: 20, height: 20)
+        
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        self.cursorLayer.frame = CGRect(x: ((self.bounds.width - 40) / 100) * CGFloat(self.cursorPosition) + 20, y: (self.bounds.height - 20) / 2, width: 2, height: 20)
+        CATransaction.commit()
         
         self.marbles.forEach { marble in
             if marble.bounds.width != 30 {

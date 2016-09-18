@@ -17,6 +17,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var formulaLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var jumpToDocButton: UIButton!
     
     @IBOutlet weak var parameterTimelineHeightConstraint: NSLayoutConstraint!
     
@@ -39,10 +40,16 @@ class DetailViewController: UIViewController {
         self.automaticallyAdjustsScrollViewInsets = false
         self.playBarButtonItem.isEnabled = self.currentOperator != nil
         
+        self.jumpToDocButton.setBackgroundImage(UIImage.imageWithRoundRect(filled: UIColor(red:0.98, green:0.10, blue:0.59, alpha:1.00), radius: 6), for: .normal)
+        self.jumpToDocButton.setBackgroundImage(UIImage.imageWithRoundRect(filled: UIColor(red:0.95, green:0.10, blue:0.56, alpha:1.00), radius: 6), for: .normal)
+        self.jumpToDocButton.setTitleColor(UIColor(white: 1.0, alpha: 0.72), for: .highlighted)
+        
+        
         self.performer.delegate = self
         
         self.majorTimeline.delegate = self
         self.parameterTimeline.delegate = self
+        self.outputTimeline.editable = false
         
         self.summaryLabel.text = self.currentOperator?.summary
         self.formulaLabel.text = self.currentOperator?.formula
@@ -74,6 +81,10 @@ class DetailViewController: UIViewController {
 
     func resetStage(resetAll: Bool) {
         self.outputTimeline.clearMarbles()
+        
+        self.majorTimeline.cursorPosition = 0
+        self.parameterTimeline.cursorPosition = 0
+        self.outputTimeline.cursorPosition = 0
         
         if resetAll {
             self.parameterTimeline.isHidden = self.currentOperator?.parameterInput == nil
@@ -116,6 +127,12 @@ extension DetailViewController: PerformerDelegate {
     
     func performer(didComplete performer: Performer) {
         (self.playBarButtonItem.customView as! UIButton).isSelected = false
+    }
+    
+    func performer(_ performer: Performer, didChangeProgress progress: Int8) {
+        self.majorTimeline.cursorPosition = progress
+        self.parameterTimeline.cursorPosition = progress
+        self.outputTimeline.cursorPosition = progress
     }
     
 }

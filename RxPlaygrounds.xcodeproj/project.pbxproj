@@ -23,6 +23,9 @@
 		FA00CC711D8D125600DE95C9 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA00CC6B1D8D125600DE95C9 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA00CC741D8D17C200DE95C9 /* ExampleOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00CC731D8D17C200DE95C9 /* ExampleOperators.swift */; };
 		FA00CC761D8D251100DE95C9 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00CC751D8D251000DE95C9 /* TimelineView.swift */; };
+		FA6E67931D8E94FE00BD2F41 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E67921D8E94FE00BD2F41 /* SettingsViewController.swift */; };
+		FA6E67951D8E976C00BD2F41 /* UIImage+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E67941D8E976C00BD2F41 /* UIImage+Helpers.swift */; };
+		FA6E67971D8EA38600BD2F41 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E67961D8EA38600BD2F41 /* String+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +60,9 @@
 		FA00CC6B1D8D125600DE95C9 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		FA00CC731D8D17C200DE95C9 /* ExampleOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleOperators.swift; sourceTree = "<group>"; };
 		FA00CC751D8D251000DE95C9 /* TimelineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
+		FA6E67921D8E94FE00BD2F41 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FA6E67941D8E976C00BD2F41 /* UIImage+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Helpers.swift"; sourceTree = "<group>"; };
+		FA6E67961D8EA38600BD2F41 /* String+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +101,12 @@
 		FA00CC501D8D0BC800DE95C9 /* RxPlaygrounds */ = {
 			isa = PBXGroup;
 			children = (
+				FA6E67941D8E976C00BD2F41 /* UIImage+Helpers.swift */,
+				FA6E67961D8EA38600BD2F41 /* String+Helpers.swift */,
 				FA00CC511D8D0BC800DE95C9 /* AppDelegate.swift */,
 				FA00CC531D8D0BC800DE95C9 /* MasterViewController.swift */,
 				FA00CC551D8D0BC800DE95C9 /* DetailViewController.swift */,
+				FA6E67921D8E94FE00BD2F41 /* SettingsViewController.swift */,
 				FA00CC651D8D0DBB00DE95C9 /* Operator.swift */,
 				FA00CC671D8D10CB00DE95C9 /* Performer.swift */,
 				FA00CC731D8D17C200DE95C9 /* ExampleOperators.swift */,
@@ -184,6 +193,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6E67971D8EA38600BD2F41 /* String+Helpers.swift in Sources */,
+				FA6E67951D8E976C00BD2F41 /* UIImage+Helpers.swift in Sources */,
 				FA00CC741D8D17C200DE95C9 /* ExampleOperators.swift in Sources */,
 				FA00CC761D8D251100DE95C9 /* TimelineView.swift in Sources */,
 				FA00CC561D8D0BC800DE95C9 /* DetailViewController.swift in Sources */,
@@ -191,6 +202,7 @@
 				FA00CC661D8D0DBB00DE95C9 /* Operator.swift in Sources */,
 				FA00CC541D8D0BC800DE95C9 /* MasterViewController.swift in Sources */,
 				FA00CC521D8D0BC800DE95C9 /* AppDelegate.swift in Sources */,
+				FA6E67931D8E94FE00BD2F41 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,16 +9,12 @@
 import UIKit
 
 class MasterViewController: UITableViewController {
-
-    var detailViewController: DetailViewController?
     
     let example = ExampleOperators()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        detailViewController = (self.splitViewController?.viewControllers.last as? UINavigationController)?.topViewController as? DetailViewController
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -31,11 +27,17 @@ class MasterViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showOperatorDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let selectedOperator = Mirror(reflecting: self.example).children.enumerated().filter({ $0.offset == indexPath.row }).first?.element.value as! Operator
+                let selectedOperator = self.example.operators[indexPath.row]
                 
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.currentOperator = selectedOperator
+                controller.navigationItem.title = "\(selectedOperator.0.firstLetterUppercased) operator"
+                controller.currentOperator = selectedOperator.1
             }
+        }
+        
+        if segue.identifier == "showSettings" {
+            let settingsVC = (segue.destination as! UINavigationController).topViewController as! SettingsViewController
+            return
         }
         
         let commonController = (segue.destination as! UINavigationController).topViewController
@@ -52,7 +54,7 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return Int(Mirror(reflecting: self.example).children.count)
+            return self.example.operators.count
         case 1:
             return 1
         default:
@@ -65,8 +67,7 @@ class MasterViewController: UITableViewController {
 
         switch (indexPath.section, indexPath.row) {
         case (0, _):
-            let label: String! = Mirror(reflecting: self.example).children.enumerated().filter({ $0.offset == indexPath.row }).first?.element.label
-            cell.textLabel!.text = label.substring(to: label.index(label.endIndex, offsetBy: -8))
+            cell.textLabel!.text = self.example.operators[indexPath.row].0
             break
         case (1, 0):
             cell.textLabel!.text = "About"

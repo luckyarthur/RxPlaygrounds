@@ -20,6 +20,8 @@ protocol PerformerDelegate: NSObjectProtocol {
     
     func performer(didComplete performer: Performer)
     
+    func performer(_ performer: Performer, didChangeProgress progress: Int8)
+    
 }
 
 
@@ -93,6 +95,7 @@ class Performer: NSObject {
         }
         
         self.playedFrame += 1
+        self.delegate?.performer(self, didChangeProgress: self.playedFrame)
         
         if self.playedFrame >= 100 {
             self.delegate?.performer(didComplete: self)
